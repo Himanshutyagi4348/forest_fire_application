@@ -51,7 +51,7 @@ If you want to run the project locally:
 
 Clone the repository
 Deployment: AWS EC2 / Elastic Beanstalk
-git clone https://github.com/yourusername/forest-fire-fwi.git
+git clone https://github.com/Himanshutyagi4348/forest_fire_application/tree/main.git
 cd forest-fire-fwi
 
 Create a virtual environment
