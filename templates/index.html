@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FWI Prediction Home</title>
+
+<style>
+/* Full page background with animated fire glow */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: url('https://images.unsplash.com/photo-1634009653379-a97409ee15de?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fGZvcmVzdCUyMGZpcmV8ZW58MHx8MHx8fDA%3D') no-repeat center center fixed;
+    background-size: cover;
+    overflow-y: auto;
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Fire glow animation overlay */
+body::after {
+    content: '';
+    position: fixed;
+    top:0; left:0; right:0; bottom:0;
+    background: rgba(255, 80, 0, 0.15);
+    animation: fireGlow 3s infinite alternate;
+    z-index: 0;
+}
+
+@keyframes fireGlow {
+    0% { background: rgba(255, 80, 0, 0.1); }
+    50% { background: rgba(255, 80, 0, 0.25); }
+    100% { background: rgba(255, 80, 0, 0.1); }
+}
+
+/* Glassmorphism container */
+.container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255,255,255,0.2);
+    backdrop-filter: blur(15px);
+    padding: 50px 60px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.4);
+    width: 450px;
+    max-width: 90%;
+    color: #fff;
+}
+
+/* Heading */
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    text-shadow: 0 0 8px #FF4B2B, 0 0 15px #FF7F50;
+}
+
+/* Paragraph */
+p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    text-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+
+/* Button styling */
+.btn {
+    display: inline-block;
+    background: linear-gradient(90deg, #FF4B2B, #FF7F50);
+    color: #fff;
+    padding: 15px 35px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(255,75,43,0.5);
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+    .container {
+        padding: 30px 20px;
+    }
+    h1 {
+        font-size: 2rem;
+    }
+    .btn {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <h1>Welcome to the FWI Prediction Application</h1>
+    <p>Predict the Fire Weather Index for Algerian Forest Fire analysis using our ML model.</p>
+    <a href="{{ url_for('predict_datapoints') }}" class="btn">Go to Prediction</a>
+</div>
+</body>
+</html>
